@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="student">
+  <select id="count" resultType="int">
+    select count(*) from student
+  </select>
+  <select id="selectList" resultType="Student">
+    select * from student
+  </select>
+  <select id="selectGrade" resultType="Student" parameterType="int">
+    select * from student where grade = #{value}
+  </select>
+  <select id="selectName" resultType="Student" parameterType="String">
+    select * from student where name like #{value}
+  </select>
+  <select id="selectGradeGender" resultType="Student" parameterType="map">
+    select * from student where grade = #{grade} and substr(jumin, 6, 1) = #{gender}
+  </select>
+</mapper>

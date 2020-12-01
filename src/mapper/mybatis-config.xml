@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org/DTD config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <properties resource="mapper/mybatis.properties" />
+  <typeAliases>
+    <typeAlias type="model.Member" alias="Member"/>
+    <typeAlias type="model.Student" alias="Student"/>
+    <typeAlias type="model.Professor" alias="Professor"/>
+  </typeAliases>
+  <environments default="development">
+    <environment id="development">
+  	  <transactionManager type="JDBC" />
+  	  <!-- Connection 객체 - Connection Pool -->
+  	  <dataSource type="POOLED">
+  	    <property name="driver" value="${driver}" />
+  	    <property name="url" value="${url}" />
+  	    <property name="username" value="${username}" />
+  	    <property name="password" value="${password}" />
+  	  </dataSource>
+  	</environment>
+  </environments>
+  <!-- SQL 구문 -->
+  <mappers>
+    <mapper resource="mapper/MemberMapper1.xml" />
+    <mapper resource="mapper/StudentMapper.xml" />
+    <mapper resource="mapper/ProfessorMapper.xml" />
+  </mappers>
+</configuration>

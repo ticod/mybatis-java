@@ -24,6 +24,8 @@
   <mappers>
     <mapper resource="mapper/MemberMapper1.xml" />
     <mapper resource="mapper/StudentMapper.xml" />
+    <mapper resource="mapper/StudentMapper2.xml" />
     <mapper resource="mapper/ProfessorMapper.xml" />
+    <package name = "mapper"/><!--  인터페이스 패키지 설정 -->
   </mappers>
 </configuration>
